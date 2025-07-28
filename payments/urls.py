@@ -1,8 +1,8 @@
 from django.urls import path
-from . import views
-
-app_name = 'payments'
+from payments.views import stk_push
 
 urlpatterns = [
+    path('stkpush/', stk_push, name='stk push'),
     
+
 ]
