@@ -104,7 +104,7 @@ PUT /api/accounts/profile/
 
 ### Create Superuser
 ```bash
-python manage.py createsuperuser --email admin@example.com --password securepass --full-name "Admin User"
+python manage.py createcustomsuperuser --email admin@example.com --password securepass --full-name "Admin User"
 ```
 
 ## Signals
