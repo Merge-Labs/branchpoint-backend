@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 
     # local
     'accounts',
@@ -181,7 +182,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'EXCEPTION_HANDLER': 'accounts.utils.custom_exception_handler',
+    # 'EXCEPTION_HANDLER': 'accounts.utils.custom_exception_handler',
 }
 
 SIMPLE_JWT = {
