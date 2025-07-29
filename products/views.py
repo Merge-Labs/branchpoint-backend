@@ -21,3 +21,6 @@ class ReceiveStockViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(received_by=self.request.user)
+        
+
+        
