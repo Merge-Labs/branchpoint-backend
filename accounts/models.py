@@ -2,11 +2,14 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django.db import models
 from django.utils import timezone
 
-# Roles
+# Updated Roles
 ROLE_CHOICES = (
     ("superadmin", "Super Admin"),
     ("manager", "Branch Manager"),
-    ("staff", "Staff"),
+    ("storekeeper", "Store Keeper"), 
+    ("salesperson", "Sales Person"),  
+    ("staff", "Staff"), 
+    ("customer", "Customer"), 
 )
 
 class UserManager(BaseUserManager):
@@ -27,7 +30,8 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES)
+    # Ensure max_length is sufficient for the longest role name
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default="staff") # Added default for existing users
     branch = models.ForeignKey("branches.Branch", null=True, blank=True, on_delete=models.SET_NULL)
 
     is_active = models.BooleanField(default=True)
