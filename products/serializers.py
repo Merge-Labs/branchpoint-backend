@@ -33,3 +33,4 @@ class ReceiveStockSerializer(serializers.ModelSerializer):
         if request and hasattr(request, 'user'):
             validated_data['received_by'] = request.user
         return super().create(validated_data)
+    
