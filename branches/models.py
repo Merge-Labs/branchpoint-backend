@@ -11,7 +11,7 @@ class Branch(models.Model):
     description = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
     manager = models.OneToOneField(
-        settings.AUTH_USER_MODEL,
+    'accounts.User',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
