@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'products',
     'sales',
     'payments',
+    'salesaccounts',
 
     # third-party
     'cloudinary',
